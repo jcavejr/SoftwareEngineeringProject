@@ -8,6 +8,61 @@
   src: url(Sansation_Bold.ttf);
 }
 
+::placeholder {
+  color: #cc0033;
+  font-family: Sansation-bold;
+  font-size: 18px;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  border-bottom: 2px solid #cc0033;
+  background-color: black;
+  color: #cc0033;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: 8px 0;
+  display: inline-block;
+  border-bottom: 1px solid #cc0033;
+  font-size: 14px;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  background-color: #cc0033;
+  font-size: 15px;
+  font-family: Sansation-bold;
+  border: 0;
+}
+
 * {
   font-family: Sansation;
+}
+
+.user-modal {
+  background: black;
+  width: 450px;
+  height: 325px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 2px solid #cc0033;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#modal-login {
+  padding: 16px 20px 16px 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.red {
+  color: #cc0033;
 }
