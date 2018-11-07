@@ -52,7 +52,7 @@ input[type="submit"] {
   margin-left: auto;
   border: 2px solid #cc0033;
   position: fixed;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -65,4 +65,15 @@ input[type="submit"] {
 
 .red {
   color: #cc0033;
+}
+
+#ru-logo img {
+  width: 325px;
+  height: 250px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
 }
