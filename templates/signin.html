@@ -43,19 +43,24 @@
         <div class="signup">Register</div>
 
         <div class="signup-form">
-            <input type="text" placeholder="First name" class="input"><br>
-            <input type="text" placeholder="Last name" class="input"><br>
-            <input type="text" placeholder="Email" class="input"><br>
-            <input type="password" placeholder="Password" class="input"><br>
-            <input type="password" placeholder="Confirm password" class="input"><br>
-            <div class="btn">REGISTER</div>
+            <form action="" method="post">
+                <input type="text" value="{{request.form.firstname}}" class="input" placeholder="First name"><br>
+                <input type="text" value="{{request.form.lastname}}" class="input" placeholder="Last name"><br>
+                <input type="text" value="{{request.form.email}}" class="input" placeholder="Email"><br>
+                <input type="password" value="{{request.form.password}}" class="input" placeholder="Password"><br>
+                <input type="password" value="{{request.form.password_conf}}" class="input" placeholder="Confirm password"><br>
+                <!-- <div class="btn">REGISTER</div> -->
+                <input class="btn btn-default" type="submit" value="REGISTER">
+            </form>
         </div>
 
         <div class="login-form">
-            <p class="red" style="margin-bottom: 30px;">Welcome back!</p>
-            <input type="text" class="input" placeholder="Email"><br>
-            <input type="password" class="input" placeholder="Password"><br>
-            <div class="btn">SIGN IN</div>
+            <form action="" method="post">
+                <p class="red" style="margin-bottom: 30px;">Welcome back!</p>
+                <input type="text" class="input" placeholder="Email"><br>
+                <input type="password" class="input" placeholder="Password"><br>
+                <div class="btn">SIGN IN</div>
+            </form>
         </div>
     </div>
 </body>
