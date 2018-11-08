@@ -31,12 +31,12 @@
             });
         });
     </script>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <title>Welcome!</title>
 </head>
 
 <body>
-    <div id="ru-logo"><img src="img/rutgers.png" alt="rutgers logo"></div>
+	<div id="ru-logo"><img src="{{ url_for('static', filename='img/rutgers.png') }}" alt="rutgers logo"></div>
     <div class="container">
         <div class="login">Sign In</div>
         <div class="signup">Register</div>
