@@ -5,40 +5,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-        crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".signup-form").hide();
+            $(".signup").css("background", "#cc0033");
+            $(".signup").css("color", "black");
+
+            $(".login").click(function () {
+                $(".signup-form").hide();
+                $(".login-form").show();
+                $(".signup").css("background", "#cc0033")
+                $(".signup").css("color", "black");
+                $(".login").css("background", "black");
+                $(".login").css("color", "#cc0033");
+            });
+
+            $(".signup").click(function () {
+                $(".login-form").hide();
+                $(".signup-form").show();
+                $(".signup").css("background", "black")
+                $(".signup").css("color", "#cc0033");
+                $(".login").css("background", "#cc0033");
+                $(".login").css("color", "black");
+            });
+        });
+    </script>
     <link rel="stylesheet" href="css/main.css">
-    <title>Document</title>
+    <title>Welcome!</title>
 </head>
 
 <body>
     <div id="ru-logo"><img src="../dist/img/rutgers.png" alt="rutgers logo"></div>
-    <div class="user-modal">
 
-        <ul class="modal-switcher">
-            <li><a href="#0">Sign In</a></li>
-            <li><a href="#0">Register</a></li>
-        </ul>
-        <p class="red" style="text-align: center; margin: 0;font-size: 18px;">Welcome back!</p>
-        <div id="modal-login">
+    <div class="container">
+        <div class="login">Sign In</div>
+        <div class="signup">Register</div>
 
-            <!--log in form -->
-            <form class="modal-form">
+        <div class="signup-form">
+            <input type="text" placeholder="First name" class="input"><br>
+            <input type="text" placeholder="Last name" class="input"><br>
+            <input type="text" placeholder="Email" class="input"><br>
+            <input type="password" placeholder="Password" class="input"><br>
+            <input type="password" placeholder="Confirm password" class="input"><br>
+            <div class="btn">REGISTER</div>
+        </div>
 
-                <p class="fieldset">
-                    <input type="email" placeholder="E-mail" id='signin-email'>
-                </p>
-
-                <p class="fieldset">
-                    <input type="password" placeholder="Password" id='signin-pw'>
-                </p>
-
-                <p class="fieldset">
-                    <input type="submit" value="SIGN IN">
-                </p>
-
-            </form>
-
+        <div class="login-form">
+            <p class="red" style="margin-bottom: 30px;">Welcome back!</p>
+            <input type="text" class="input" placeholder="Email"><br>
+            <input type="password" class="input" placeholder="Password"><br>
+            <div class="btn">SIGN IN</div>
         </div>
     </div>
 </body>

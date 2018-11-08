@@ -7,60 +7,85 @@
   font-family: Sansation-bold;
   src: url(Sansation_Bold.ttf);
 }
-
 ::placeholder {
   color: #cc0033;
+  text-align: left;
   font-family: Sansation-bold;
-  font-size: 18px;
+  font-size: 17px;
 }
-
-input[type="email"],
-input[type="password"] {
-  width: 100%;
-  border-bottom: 2px solid #cc0033;
-  background-color: black;
-  color: #cc0033;
-  border-left: none;
-  border-right: none;
-  border-top: none;
-  margin: 8px 0;
-  display: inline-block;
-  border-bottom: 1px solid #cc0033;
-  font-size: 14px;
-}
-
-input[type="submit"] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  background-color: #cc0033;
-  font-size: 15px;
-  font-family: Sansation-bold;
-  border: 0;
-}
-
 * {
-  font-family: Sansation;
+  margin: 0;
+  padding: 0;
+  user-select: none;
 }
 
-.user-modal {
-  background: black;
+body {
+  background: white;
+  font-family: Sansation-bold;
+}
+
+.container {
   width: 450px;
-  height: 325px;
-  margin-right: auto;
-  margin-left: auto;
-  border: 2px solid #cc0033;
-  position: fixed;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: 10px auto;
+  border: 3px solid #cc0033;
 }
 
-#modal-login {
-  padding: 16px 20px 16px 20px;
-  margin-left: auto;
-  margin-right: auto;
+.signup,
+.login {
+  width: 50%;
+  background: black;
+  height: 60px;
+  float: left;
+  color: #cc0033;
+  text-align: center;
+  line-height: 60px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.signup-form {
+  background: black;
+  box-sizing: border-box;
+  padding: 40px;
+  clear: both;
+  width: 100%;
+  height: 550px;
+}
+
+.login-form {
+  background: black;
+  box-sizing: border-box;
+  padding: 40px;
+  clear: both;
+  width: 100%;
+  height: 400px;
+}
+
+.login-form p {
+  text-align: center;
+}
+
+.input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 45px;
+  background: black;
+  border: 0;
+  border-bottom: 2px solid #cc0033;
+  color: #cc0033;
+  font-size: 17px;
+}
+
+.btn {
+  width: 100%;
+  background: #cc0033;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  font-size: 20px;
 }
 
 .red {
@@ -69,11 +94,11 @@ input[type="submit"] {
 
 #ru-logo img {
   width: 325px;
-  height: 250px;
+  height: 200px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   position: relative;
 }
