@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 import sys
 
 app = Flask(__name__)
@@ -16,7 +16,7 @@ def loginpage():
             password = request.form["password"]
 
             # Check if email exists in user db
-            if email == "myemail@test.com":
+            if email == "myemail@test.com" and password == "test":
                 return redirect(url_for("dashboard"))
             else:
                 error = "Invalid email"
