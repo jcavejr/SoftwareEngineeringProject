@@ -7,7 +7,12 @@
   font-family: Sansation-bold;
   src: url(Sansation_Bold.ttf);
 }
-::placeholder {
+/*
+  -----------------------------------
+  css for registration and login page
+  -----------------------------------
+*/
+.signup-form ::placeholder {
   color: #cc0033;
   text-align: left;
   font-family: Sansation-bold;
@@ -101,4 +106,50 @@ body {
   margin-top: 20px;
   margin-bottom: 15px;
   position: relative;
+}
+
+/*
+  --------------------------
+  pick classes css
+  --------------------------
+*/
+
+#ru-logo-sm img {
+  width: 175px;
+  height: 100px;
+  margin-top: 50px;
+  margin-left: 40px;
+}
+
+.search-bar {
+  margin-top: 20px;
+  margin-left: 160px;
+  font-family: Sansation;
+}
+
+.search-bar p {
+  font-size: 50px;
+  border-bottom: 1px #cc0033 solid;
+  width: 650px;
+  margin-bottom: 25px;
+}
+
+.search-bar input {
+  margin: 10px;
+}
+
+#search-container {
+  background-color: black;
+  border: 2px solid #cc0033;
+  border-radius: 12px;
+  width: 650px;
+  height: 40px;
+}
+
+.search-bar ::placeholder {
+  font-size: 30px;
+  color: #cc0033;
+  text-align: left;
+  text-indent: 10px;
+  line-height: normal;
 }
