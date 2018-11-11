@@ -24,12 +24,11 @@ function search() {
   }
 
   for (var i = 0; i < searchItems.length; i++) {
-    if (searchItems[i].includes(input)) {
+    if (searchItems[i].includes(input) && input != "") {
       var ul = document.getElementById("search-results");
       var li = document.createElement("li");
       li.innerHTML = searchItems[i];
       ul.appendChild(li);
-      console.log(searchItems[i]);
     }
   }
 }
