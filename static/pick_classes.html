@@ -6,14 +6,21 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/main.css" />
-    <script src="main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
   </head>
   <body style="background-color: #1A1B1B; color: #cc0033;">
     <div id="ru-logo-sm"><img src="img/rutgers.png" alt="rutgers logo" /></div>
     <div class="search-bar">
       <p>Add your classes</p>
       <form action="">
-        <input type="text" id="search-container" placeholder="Search..." />
+        <input
+          type="text"
+          id="search-container"
+          placeholder="Search..."
+          onkeyup="wait()"
+        />
+        <div><ul id="search-results"></ul></div>
       </form>
     </div>
   </body>
