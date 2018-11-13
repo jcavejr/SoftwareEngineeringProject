@@ -3,7 +3,10 @@ var searchItems = [
   "Computer networks",
   "Operating systems",
   "Spanish",
-  "Calculus"
+  "Calculus",
+  "Databases",
+  "Music",
+  "Art"
 ];
 
 var _timer = 0;
@@ -15,7 +18,8 @@ function wait() {
 }
 
 function search() {
-  var input;
+  var input,
+    count = 0;
   input = document.getElementById("search-container").value.toLowerCase();
 
   var node = document.getElementById("search-results");
@@ -27,7 +31,8 @@ function search() {
     if (
       searchItems[i].toLowerCase().includes(input) &&
       input != "" &&
-      input != " "
+      input != " " &&
+      count < 5
     ) {
       var ul = document.getElementById("search-results");
       var a = document.createElement("a");
@@ -36,6 +41,7 @@ function search() {
       a.setAttribute("href", "#");
       a.appendChild(li);
       ul.appendChild(a);
+      count++;
     }
   }
 }

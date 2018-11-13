@@ -172,3 +172,23 @@ body {
   list-style-type: none;
   margin-left: 10px;
 }
+
+#class-cells {
+  margin-left: 180px;
+  margin-top: 10px;
+  width: 650px;
+}
+
+#class-cells li {
+  background-color: black;
+  list-style-type: none;
+  float: left;
+  border: 3px solid #cc0033;
+  border-radius: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
