@@ -9,6 +9,8 @@ var searchItems = [
   "Art"
 ];
 
+var added = [];
+
 var _timer = 0;
 function wait() {
   if (_timer) window.clearTimeout(_timer);
@@ -32,7 +34,8 @@ function search() {
       searchItems[i].toLowerCase().includes(input) &&
       input != "" &&
       input != " " &&
-      count < 5
+      count < 5 &&
+      added.includes(searchItems[i]) != true
     ) {
       var ul = document.getElementById("search-results");
       var a = document.createElement("a");
@@ -52,5 +55,12 @@ function addClass(id) {
   var ul = document.getElementById("class-cells");
   var li = document.createElement("li");
   li.innerHTML = id;
+  added.push(id);
   ul.appendChild(li);
 }
+
+/*
+    To do
+
+    - remove a selected class from search query
+*/
