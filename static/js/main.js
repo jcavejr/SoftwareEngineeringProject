@@ -57,10 +57,16 @@ function addClass(id) {
   li.innerHTML = id;
   added.push(id);
   ul.appendChild(li);
+
+  closeList = document.getElementById("search-results");
+  while (closeList.firstChild) {
+    closeList.removeChild(closeList.firstChild);
+  }
 }
 
 /*
     To do
 
-    - remove a selected class from search query
+    - removing a class
+    - make it so you cant add a class twice 
 */
