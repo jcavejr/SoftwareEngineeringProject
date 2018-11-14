@@ -38,10 +38,19 @@ function search() {
       var a = document.createElement("a");
       var li = document.createElement("li");
       li.innerHTML = searchItems[i];
+      a.setAttribute("onclick", "addClass(this.id)");
       a.setAttribute("href", "#");
+      a.setAttribute("id", searchItems[i]);
       a.appendChild(li);
       ul.appendChild(a);
       count++;
     }
   }
+}
+
+function addClass(id) {
+  var ul = document.getElementById("class-cells");
+  var li = document.createElement("li");
+  li.innerHTML = id;
+  ul.appendChild(li);
 }
