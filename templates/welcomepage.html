@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Loads bootstrap -->
+    <link href={{ url_for('static', filename='css/bootstrap.min.css') }} rel="stylesheet">
+    <!-- Loads CSS for welcome from static folder -->
+    <link href={{ url_for('static', filename='welcomepage.css') }} rel="stylesheet">
+    <title>Home Page</title>
+  </head>
+
+
+<!-- Placeholder for real search bar for design purposes - not functional -->
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand">Rutgers University</a>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
+<!-- End Placeholder -->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2 pt-2">
+      <ul style="list-style-type: none;" class="text-nowrap">
+        <li class="pb-2">Operating Systems</li>
+        <li class="pb-2">Computer Networks</li>
+        <li class="pb-2">Spanish 3</li>
+        <li class="pb-2">Calculus 6</li>
+      </ul>
+    </div>
+
+    <div class="col-8">
+      <h1 class="text-center pb-3">Good Morning, {{name}}!</h1>
+      <div class="card" 
+        style="
+        margin-bottom: 2rem;
+        "
+      >
+        <div class="card-body">
+          <div>
+            <p styles="text-align: left;">John asks...</p>
+            <h5>What exactly is a pointer?</h5>
+            <p styles="text-slight: right;">12 likes</p>
+          </div>
+          <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+          <p class="card-text">Question details.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+          <a href="#" class="card-link">2 answers</a>
+          <a href="#" class="card-link">Save</a>
+        </div>
+      </div>
+
+      <div class="card" style="
+        margin-bottom: 2rem;
+       "
+      >
+        <div class="card-body">
+          <h5 class="card-title">When should I use a semaphore?</h5>
+          <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+          <p class="card-text">Question details.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+          <a href="#" class="card-link">5 answers</a>
+          <a href="#" class="card-link">Save</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-2 pt-2">
+      <div class="col">
+        <div class="row">
+          <h3>Online</h3>
+          <div class="col">           
+            <ul style="list-style-type: none;" class="text-nowrap">
+              <li class="pb-2">John Carter</li>
+              <li class="pb-2">Jeff Cave</li>
+              <li class="pb-2">Dom Scola</li>
+              <li class="pb-2">Meredith Alcorn</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="row">
+          <h3>Class Chats</h3>
+          <div class="col">
+            <ul style="list-style-type: none;">
+              <li class="pt-2">Operating Systems</li>
+              <li class="pt-2">Computer Networks</li>
+              <li class="pt-2">Physics 3</li>
+              <li class="pt-2">Spanish 3</li>
+              <li class="pt-2">Calculus 6</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</html>
