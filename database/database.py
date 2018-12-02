@@ -13,7 +13,7 @@ class se_db:
     config = {
     'user': 'debian-sys-maint',
     'password': 'pR5hJsvCW37Z4Ude',
-    'host': 'localhost',
+    'host': '127.0.0.1',
     'database': 'test',
     }
     
@@ -30,11 +30,12 @@ class se_db:
                     return "Error: Email already exists in database"
         except:
             return "Error: Unable to execute query"
-        queryInsert = """INSERT INTO test.profiles (email, password, first, last, school, upvotes) VALUES ('%s','%s','%s','%s','%s', 0)""" % (email, password, first, last, school)
+        queryInsert = """INSERT INTO test.profiles (email, password, first, last, school, upvotes, active_flag) VALUES ('%s','%s','%s','%s','%s', 0, 1)""" % (email, password, first, last, school)
         try:
             self.cursor.execute(queryInsert)
             self.connection.commit()
-        except:
+        except mysql.connector.Error as err:
+            print(err)
             return "Error: Unable to insert user into database"
         return "Successfully added user to database"
     
@@ -59,41 +60,23 @@ class se_db:
         for (first, last) in self.cursor:
             return first+" "+last
     
-#    def getProfileSchool(self, email):
-#        querySelect = """SELECT school FROM se_database.profiles WHERE email = '%s'""" % (email)
-#        try:
-#            self.cursor.execute(querySelect)
-#        except:
-#            return "Error: Unable to execute query"
-#        for (school) in self.cursor:
-#            return school[0]
-#    
-#    def getProfileClass(self, email):
-#        querySelect = """SELECT class_number FROM se_database.profiles WHERE email = '%s'""" % (email)
-#        try:
-#            self.cursor.execute(querySelect)
-#        except:
-#            return "Error: Unable to execute query"
-#        for (class_number) in self.cursor:
-#            return class_number[0]
-#    
-#    def getProfileUpvotes(self, email):
-#        querySelect = """SELECT upvotes FROM se_database.profiles WHERE email = '%s'""" % (email)
-#        try:
-#            self.cursor.execute(querySelect)
-#        except:
-#            return "Error: Unable to execute query"
-#        for (upvotes) in self.cursor:
-#            return upvotes[0]
-#        
-#    def getProfileId(self, email):
-#        querySelect = """SELECT profile_id FROM se_database.profiles WHERE email = '%s'""" % (email)
-#        try:
-#            self.cursor.execute(querySelect)
-#        except:
-#            return "Error: Unable to execute query"
-#        for (profile_id) in self.cursor:
-#            return profile_id[0]
+    def getProfileSchool(self, email):
+        querySelect = """SELECT school FROM test.profiles WHERE email = '%s'""" % (email)
+        try:
+            self.cursor.execute(querySelect)
+        except:
+            return "Error: Unable to execute query"
+        for (school) in self.cursor:
+            return school[0]
+
+    def getProfileUpvotes(self, email):
+        querySelect = """SELECT upvotes FROM test.profiles WHERE email = '%s'""" % (email)
+        try:
+            self.cursor.execute(querySelect)
+        except:
+            return "Error: Unable to execute query"
+        for (upvotes) in self.cursor:
+            return upvotes[0]
 #            
 #    def addThread(self, email, thread_title, post):
 #        queryCheck = """SELECT COUNT(*) FROM se_database.threads WHERE email = '%s' AND thread_title = '%s' AND post = '%s'""" % (email, thread_title, post)
