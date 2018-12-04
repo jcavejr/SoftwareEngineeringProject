@@ -49,7 +49,11 @@ def register_new_user():
 
         return render_template("signin.html")
     except Exception as e:
-        return render_template("signin.html", error=error)    
+        return render_template("signin.html", error=error) 
+
+@app.route('/welcome_page/')
+def welcome_page():
+    return render_template("welcomepage.html")   
 
 
 if __name__ == "__main__":
