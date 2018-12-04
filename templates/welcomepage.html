@@ -24,14 +24,14 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-2 pt-2">
-      <ul style="list-style-type: none;" class="text-nowrap">
-        <li class="pb-2">Operating Systems</li>
-        <li class="pb-2">Computer Networks</li>
-        <li class="pb-2">Spanish 3</li>
-        <li class="pb-2">Calculus 6</li>
-      </ul>
-    </div>
+      <div class="col-2 pt-2">
+        <ul style="list-style-type: none;" class="text-nowrap">
+          <li class="pb-2">Operating Systems</li>
+          <li class="pb-2">Computer Networks</li>
+          <li class="pb-2">Spanish 3</li>
+          <li class="pb-2">Calculus 6</li>
+        </ul>
+      </div>
 
     <div class="col-8">
       <h1 class="text-center pb-3">Good Morning, {{name}}!</h1>
@@ -40,36 +40,44 @@
         margin-bottom: 2rem;
         "
       >
-        <div class="card-body">
-          <div>
-            <p styles="text-align: left;">John asks...</p>
-            <h5>What exactly is a pointer?</h5>
-            <p styles="text-slight: right;">12 likes</p>
+          <div class="card-body">
+            <div class="card-title text-left">John says...
+              <span class="text-right" style="margin-left: 60%">12 L</span>
+              <h5 class="text-center">What exactly is a pointer?</h5>
+            </div>
+            <!-- <div class="card-title"> -->
+            <!-- </div> -->
+            <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+            <p class="card-text">Question details.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <div class="text-right">
+              <a href="#" class="card-link">2 answers</a>
+              <a href="#" class="card-link">Save</a>
+            </div>
           </div>
-          <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-          <p class="card-text">Question details.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-          <a href="#" class="card-link">2 answers</a>
-          <a href="#" class="card-link">Save</a>
         </div>
-      </div>
 
       <div class="card" style="
         margin-bottom: 2rem;
        "
       >
         <div class="card-body">
-          <h5 class="card-title">When should I use a semaphore?</h5>
+          <div class="card-title text-left" style="display: block">LongNameTest says...
+            <span class="text-right" style="margin-left: 60%">2 L</span>
+            <h5 class="text-center">When should I use a semaphore?</h5>
+          </div>
           <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
           <p class="card-text">Question details.
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
             aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
           </p>
-          <a href="#" class="card-link">5 answers</a>
-          <a href="#" class="card-link">Save</a>
+          <div class="text-right">
+            <a href="#" class="card-link">5 answers</a>
+            <a href="#" class="card-link">Save</a>
+          </div>
         </div>
       </div>
     </div>
