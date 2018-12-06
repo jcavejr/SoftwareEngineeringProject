@@ -54,6 +54,9 @@ function search() {
 function addClass(id) {
   var ul = document.getElementById("class-cells");
   var li = document.createElement("li");
+  li.setAttribute("onmouseover", "mouseOver(this.id)");
+  li.setAttribute("onmouseout", "mouseOut(this.id)");
+  li.setAttribute("id", id);
   li.innerHTML = id;
   added.push(id);
   ul.appendChild(li);
@@ -64,9 +67,39 @@ function addClass(id) {
   }
 }
 
+var orig;
+
+function mouseOver(id) {
+  var li = document.getElementById(id);
+  li.style.backgroundColor = "#cc0033";
+  li.style.color = "black";
+  orig = li.innerHTML;
+  li.innerHTML = "X";
+  li.style.paddingLeft = "20px";
+  li.style.paddingRight = "20px";
+  li.setAttribute("onclick", "removeItem(this.id)");
+}
+
+function mouseOut(id) {
+  var li = document.getElementById(id);
+  li.style.backgroundColor = "black";
+  li.style.color = "#cc0033";
+  li.innerHTML = orig;
+  li.style.paddingLeft = "10px";
+  li.style.paddingRight = "10px";
+}
+
+function removeItem(id) {
+  var li = document.getElementById(id);
+  li.remove();
+  for (var i = 0; i < added.length; i++) {
+    if (added[i] == id) {
+      added.splice(i);
+    }
+  }
+}
+
 /*
     To do
-
     - removing a class
-    - make it so you cant add a class twice 
 */

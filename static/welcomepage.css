@@ -1,0 +1,17 @@
+@font-face {
+  font-family: Sansation;
+  src: url(Sansation_Regular.ttf);
+}
+
+@font-face {
+  font-family: Sansation-bold;
+  src: url(Sansation_Bold.ttf);
+}
+
+.container-fluid {
+  font-family: Sansation;
+}
+
+.test {
+  font-weight: bold;
+}
