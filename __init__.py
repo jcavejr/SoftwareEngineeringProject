@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-from database.database import se_db
+from FlaskApp.database import se_db
 import sys
 
 app = Flask(__name__)
