@@ -27,13 +27,11 @@ def loginpage():
     except Exception as e:
         return render_template("signin.html", error=error)
 
-@app.route('/register_new_user/', methods=["GET", "POST"])
+@app.route('/register/', methods=["GET", "POST"])
 def register_new_user():
     error = ""
     try:
         if request.method == "POST":
-            print("POSTING login page")
-            
             firstname = request.form["firstname"]
             lastname = request.form["lastname"]
             email = request.form["email"]
@@ -43,9 +41,10 @@ def register_new_user():
             # Should give user an error message about mismatching password
             if password != password_conf:
                 return render_template("signin.html")
-            user_db.addProfile(email, password, firstname, lastname)
-
-        return render_template("signin.html")
+            user_db.addProfile(email, password, firstname, lastname,)
+            return redirect(url_for("welcome_page"))
+        
+        return render_template("welcomepage.html")
     except Exception as e:
         return render_template("signin.html", error=error) 
 
