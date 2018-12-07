@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for
-from database.database import se_db
+from FlaskApp.database import se_db
 import sys
 
 app = Flask(__name__)
+user_db = se_db()
 
 @app.route('/')
 def homepage():
@@ -39,13 +40,10 @@ def register_new_user():
             password = request.form["password"]
             password_conf = request.form["password_conf"]
 
+            # Should give user an error message about mismatching password
             if password != password_conf:
-                error = "Passwords do not match"
-            # Check if somebody alreadt registered with that email
-            elif email == "myemail@test.com":
-                return redirect(url_for("dashboard"))
-            else:
-                error = "Invalid email"
+                return render_template("signin.html")
+            user_db.addProfile(email, password, firstname, lastname)
 
         return render_template("signin.html")
     except Exception as e:
