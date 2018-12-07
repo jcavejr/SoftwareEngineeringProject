@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="js/main.js"></script>
+    <title>Document</title>
+</head>
+<body>
+      <button style = "top: 50%; left: 50%;" onclick="questionOn()">Click me</button>
+        <div id="overlay" onclick="questionOff()"></div>
+        <div id="question">
+          <p>Ask a question</p>
+          <input type="text" id="title-container" placeholder="Title" />
+          <textarea rows="12" cols="50" style="resize: none;"></textarea>
+          <div class = "postDiv">
+              <a href="#" id="post">POST </a>
+            </div>
+          <div class="dropdown">
+              <a id="tab" href="#">Class  &#9661</a>
+              <ul class= "drop-nav">
+                <li><a href="#">Computer</a></li>
+                <li><a href="#">Intro to Art History</a></li>
+                <li><a href="#">Physics</a></li>
+              </ul></li>
+            </div>
+            <div class="dropdown">
+                <a id="tab" href="#">Subject  &#9661</a>
+                <ul class= "drop-nav">
+                  <li><a href="#">Physics</a></li>
+                  <li><a href="#">Comp Geometry</a></li>
+                  <li><a href="#">Physics</a></li>
+                </ul></li>
+              </div>
+        </div>
+</body>
+</html>

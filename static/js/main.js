@@ -99,7 +99,12 @@ function removeItem(id) {
   }
 }
 
-/*
-    To do
-    - removing a class
-*/
+function questionOn() {
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById("question").style.display = "block";
+}
+
+function questionOff() {
+  document.getElementById("overlay").style.display = "none";
+  document.getElementById("question").style.display = "none";
+}
