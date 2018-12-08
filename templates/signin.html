@@ -42,15 +42,33 @@
         <div class="signup">Register</div>
 
         <div class="signup-form">
-            <form action="/register/" method="post">
+            {% from "_formhelpers.html" import render_field %}
+            <form method=post action="/register/">
+                <dl>
+                    <!-- {{render_field(form.firstname)}}
+                    {{render_field(form.lastname)}}
+                    {{render_field(form.email)}}
+                    {{render_field(form.password)}}
+                    {{render_field(form.confirm)}} -->
+                    {{form.firstname(class_="input", placeholder="First Name")}}
+                    {{form.lastname(class_="input", placeholder="Last Name")}}
+                    {{form.email(class_="input", placeholder="Email")}}
+                    {{form.password(class_="input", placeholder="Password")}}
+                    {{form.confirm(class_="input", placeholder="Confirm Password")}}
+                </dl>
+                <input class="btn btn-default" type=submit value="REGISTER">
+            </form>
+            {% if error %}
+                <p class="error"><strong>Error:</strong>{{error}}</p>
+            {% endif %}
+            <!-- <form action="/register/" method="post">
                 <input type="text" value="{{request.form.firstname}}" class="input" placeholder="First name" name="firstname"><br>
                 <input type="text" value="{{request.form.lastname}}" class="input" placeholder="Last name" name="lastname"><br>
                 <input type="text" value="{{request.form.email}}" class="input" placeholder="Email" name="email"><br>
                 <input type="password" value="{{request.form.password}}" class="input" placeholder="Password" name="password"><br>
                 <input type="password" value="{{request.form.password_conf}}" class="input" placeholder="Confirm password" name="password_conf"><br>
-                <!-- <div class="btn">REGISTER</div> -->
                 <input class="btn btn-default" type="submit" value="REGISTER">
-            </form>
+            </form> -->
         </div>
 
         <div class="login-form">
