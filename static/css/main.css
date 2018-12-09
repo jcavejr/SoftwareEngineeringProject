@@ -223,7 +223,18 @@ body {
   opacity: 0.85;
   z-index: 2;
 }
-
+#post-overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #030303;
+  opacity: 0.85;
+  z-index: 2;
+}
 #post-expanded {
   display: none;
   position: fixed;
@@ -348,7 +359,6 @@ body {
   border: 1px solid #cc0033;
 }
 
-
 /*
   --------------------------
   home page
@@ -356,9 +366,9 @@ body {
 */
 
 #logo {
-    height: 5%;
-    width: 2%; 
+  height: 5%;
+  width: 2%;
 }
 .bg-dark {
-    background-color: black !important;
-} 
+  background-color: black !important;
+}
