@@ -48,7 +48,7 @@
         <div class="card-header">
           <span class="subject-header">Physics</span>
         </div>
-        <div class="card-body">
+        <div class="card-body" style="padding-bottom: 0;">
           <h5 class="card-title d-flex justify-content-between">
             <div class="user ">John asks</div>
             <div class="title ">What is a semaphore?</div>
@@ -56,7 +56,7 @@
               12 <i class="fa fa-thumbs-o-up" style="font-size:20px"></i>
             </div>
           </h5>
-          <p class="card-text">
+          <p class="card-text" style="margin-bottom: 0;">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
             dolorum mollitia esse tempora, ipsa autem ducimus ipsum omnis! Dolor
             ipsa, nulla at, dolores eum quibusdam facilis blanditiis libero
@@ -70,8 +70,13 @@
             deserunt provident mollitia cumque pariatur? Et porro quae dolores
             velit alias.
           </p>
+          <p class="card-text" style="margin-top: 0; margin-bottom: 0;">
+          <div class="answer-count" style="display: inline-block">3 answers</div>
+          <div class="save" style="display: inline-block"><i class="fa fa-star-o" style="font-size:15px"></i> Save</div>
+        </p>
         </div>
-        <div class="form-group" style="padding: 2rem;">
+
+        <div class="form-group" style="padding:0 2rem;">
           <label for="answer">Answer:</label>
           <textarea
             class="form-control red-border"
@@ -80,6 +85,7 @@
             placeholder="Help us answer the question!"
           ></textarea>
         </div>
+        
       </div>
 
       <div class="col-8">
@@ -99,11 +105,6 @@
                 12 <i class="fa fa-thumbs-o-up" style="font-size:20px"></i>
               </div>
             </div>
-            <!-- <div class="card-title"> -->
-            <!-- </div> -->
-            <!--
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            -->
             <p class="card-text">
               Question details. Lorem ipsum dolor sit amet, consectetur
               adipiscing elit, sed do eiusmod tempor incididunt ut labore et
