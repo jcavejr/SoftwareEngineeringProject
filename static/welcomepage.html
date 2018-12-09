@@ -4,11 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <!-- Loads bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <!-- Loads CSS for welcome from static folder -->
     <link rel="stylesheet" href="css/main.css" />
-
+    <script src="js/main.js"></script>
     <title>Home Page</title>
   </head>
 
@@ -28,7 +32,6 @@
     </form>
   </nav>
   <!-- End Placeholder -->
-
   <div class="container-fluid">
     <div class="row">
       <div class="col-2 pt-2">
@@ -39,20 +42,62 @@
           <li class="pb-2">Calculus 6</li>
         </ul>
       </div>
+      <div id="overlay" onclick="postOverlayOff()"></div>
+
+      <div class="card" id="post-expanded">
+        <div class="card-header">
+          <span class="subject-header">Physics</span>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title d-flex justify-content-between">
+            <div class="user ">John asks</div>
+            <div class="title ">What is a semaphore?</div>
+            <div class="likes ">
+              12 <i class="fa fa-thumbs-o-up" style="font-size:20px"></i>
+            </div>
+          </h5>
+          <p class="card-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+            dolorum mollitia esse tempora, ipsa autem ducimus ipsum omnis! Dolor
+            ipsa, nulla at, dolores eum quibusdam facilis blanditiis libero
+            deserunt voluptatibus enim harum expedita ab repudiandae maiores
+            praesentium modi, ipsum est quae voluptates magni. Vero molestias
+            quam laboriosam eaque animi. Illum quas rem pariatur? Aliquam
+            voluptatum, suscipit labore dicta inventore totam, doloribus quia
+            voluptatibus dolores ad exercitationem nesciunt natus aspernatur
+            ullam. At odit optio in aliquid atque animi, eaque blanditiis id ut,
+            iusto placeat ad doloremque ab facere perspiciatis laboriosam
+            deserunt provident mollitia cumque pariatur? Et porro quae dolores
+            velit alias.
+          </p>
+        </div>
+        <div class="form-group" style="padding: 2rem;">
+          <label for="answer">Answer:</label>
+          <textarea
+            class="form-control red-border"
+            id="answer"
+            rows="3"
+            placeholder="Help us answer the question!"
+          ></textarea>
+        </div>
+      </div>
 
       <div class="col-8">
         <h1 class="text-center pb-3">Good Morning, {{ name }}!</h1>
         <div
-          class="card"
+          onclick="postOverlayOn()"
+          class="card card-hover-effect"
           style="
         margin-bottom: 2rem;
         "
         >
           <div class="card-body">
-            <div class="card-title text-left">
-              John says...
-              <span class="text-right" style="margin-left: 60%">12 L</span>
-              <h5 class="text-center">What exactly is a pointer?</h5>
+            <div class="card-title d-flex justify-content-between">
+              <div class="user ">John asks</div>
+              <div class="title ">What is a semaphore?</div>
+              <div class="likes ">
+                12 <i class="fa fa-thumbs-o-up" style="font-size:20px"></i>
+              </div>
             </div>
             <!-- <div class="card-title"> -->
             <!-- </div> -->

@@ -108,3 +108,13 @@ function questionOff() {
   document.getElementById("overlay").style.display = "none";
   document.getElementById("question").style.display = "none";
 }
+
+function postOverlayOn() {
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById("post-expanded").style.display = "block";
+}
+
+function postOverlayOff() {
+  document.getElementById("overlay").style.display = "none";
+  document.getElementById("post-expanded").style.display = "none";
+}

@@ -224,6 +224,16 @@ body {
   z-index: 2;
 }
 
+#post-expanded {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 3;
+  width: 65rem;
+}
+
 #question {
   transform: translate(-50%, -50%);
   top: 40%;
@@ -317,4 +327,23 @@ body {
 
 .test {
   font-weight: bold;
+}
+
+.card-hover-effect :hover {
+  border: 1px solid #cc0033;
+}
+
+.card-body :hover {
+  border: none;
+}
+
+.subject-header {
+  border: 1px solid #cc0033;
+  border-radius: 12px;
+  padding: 3px 5px;
+  color: #cc0033;
+}
+
+.red-border {
+  border: 1px solid #cc0033;
 }
