@@ -17,20 +17,25 @@
   </head>
 
   <!-- Placeholder for real search bar for design purposes - not functional -->
-  <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand">Rutgers University</a>
-    <form class="form-inline">
-      <input
-        class="form-control mr-sm-2"
-        type="search"
-        placeholder="Search"
-        aria-label="Search"
-      />
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-        Search
-      </button>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <img src="../static/img/rutgers-logo.png" id="logo" class="navbar-brand flex-grow-1" href="#" alt="rutgers-logo">
+  <div class="flex-grow-1 d-flex">
+    <form class="form-inline bg-dark mx-0 mx-lg-auto">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     </form>
-  </nav>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse">
+    <div class="navbar-nav ml-auto">
+      <a class="nav-item nav-link" href="#"><i class="fa fa-home fa-lg" aria-hidden="true"></i></a>
+      <a class="nav-item nav-link" onclick=questionOn()><i class="fa fa-question-circle fa-lg" aria-hidden="true"></i></a>
+      <a class="nav-item nav-link" href="#"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</nav>
   <!-- End Placeholder -->
   <div class="container-fluid">
     <div class="row">

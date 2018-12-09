@@ -347,3 +347,18 @@ body {
 .red-border {
   border: 1px solid #cc0033;
 }
+
+
+/*
+  --------------------------
+  home page
+  --------------------------
+*/
+
+#logo {
+    height: 5%;
+    width: 2%; 
+}
+.bg-dark {
+    background-color: black !important;
+} 
