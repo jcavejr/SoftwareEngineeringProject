@@ -16,7 +16,6 @@
     <title>Home Page</title>
   </head>
 
-  <!-- Placeholder for real search bar for design purposes - not functional -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <img src="../static/img/rutgers-logo.png" id="logo" class="navbar-brand flex-grow-1" href="#" alt="rutgers-logo">
   <div class="flex-grow-1 d-flex">
@@ -36,8 +35,35 @@
     </div>
   </div>
 </nav>
-  <!-- End Placeholder -->
-  <div class="container-fluid">
+
+  <div id="question">
+    <p>Ask a question</p>
+    <input type="text" id="title-container" placeholder="Title" />
+    <textarea rows="12" cols="50" style="resize: none;"></textarea>
+    <div class="postDiv">
+      <a href="#" id="post">POST </a>
+    </div>
+    <div class="dropdown">
+      <a id="tab" href="#">Class &#9661</a>
+      <ul class="drop-nav">
+        <li><a href="#">Computer</a></li>
+        <li><a href="#">Intro to Art History</a></li>
+        <li><a href="#">Physics</a></li>
+      </ul>
+      </li>
+    </div>
+    <div class="dropdown">
+      <a id="tab" href="#">Subject &#9661</a>
+      <ul class="drop-nav">
+        <li><a href="#">Physics</a></li>
+        <li><a href="#">Comp Geometry</a></li>
+        <li><a href="#">Physics</a></li>
+      </ul>
+      </li>
+    </div>
+  </div>
+
+  <div class="container-fluid" onclick=questionOff()>
     <div class="row">
       <div class="col-2 pt-2">
         <ul style="list-style-type: none;" class="text-nowrap">
