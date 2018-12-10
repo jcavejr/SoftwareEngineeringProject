@@ -105,22 +105,20 @@ function removeItem(id) {
   }
 }
 
-function questionOn() {
-    document.getElementById("overlay").style.display = "block";
-    document.getElementById("question").style.display = "block";
+function addOverlay(id) {
+  const ids = ["question", "post-expanded", "post-overlay", "new-class"];
+  ids.forEach((i) => {
+    if(i == id){
+      document.getElementById(i).style.display = "block"; 
     }
+  })
+  document.getElementById("overlay").style.display = "block";
+}
 
-function questionOff() {
-    document.getElementById("overlay").style.display = "none";
-    document.getElementById("question").style.display = "none";
-    }
-
-function postOverlayOn() {
-    document.getElementById("post-overlay").style.display = "block";
-    document.getElementById("post-expanded").style.display = "block";
-    }
-
-function postOverlayOff() {
-    document.getElementById("post-overlay").style.display = "none";
-    document.getElementById("post-expanded").style.display = "none";
-    }
+function removeOverlay() {
+  const ids = ["question", "post-expanded", "post-overlay", "new-class"];
+  ids.forEach((i) => {
+    document.getElementById(i).style.display = "none";
+    })
+  document.getElementById("overlay").style.display = "none";
+}

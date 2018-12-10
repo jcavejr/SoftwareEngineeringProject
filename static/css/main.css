@@ -359,6 +359,28 @@ body {
   border: 1px solid #cc0033;
 }
 
+/* new class overlay */
+
+#new-class {
+  transform: translate(-50%, -50%);
+  top: 40%;
+  width: 500px;
+  position: fixed;
+  left: 50%;
+  display: none;
+  z-index: 3;
+}
+
+#new-class p {
+  color: #cc0033;
+  font-family: Sansation;
+  font-size: 40px;
+  border-bottom: 1px solid #cc0033;
+  margin-bottom: 10px;
+  width: 500px;
+}
+
+
 /*
   --------------------------
   home page

@@ -33,13 +33,15 @@
   <div class="">
     <div class="navbar-nav ml-auto">
       <a class="nav-item nav-link" href="#"><i class="fa fa-home fa-lg" aria-hidden="true"></i></a>
-      <a class="nav-item nav-link" onclick="questionOn()"><i class="fa fa-question-circle fa-lg" aria-hidden="true"></i></a>
+      <a class="nav-item nav-link" onclick="addOverlay('question')"><i class="fa fa-question-circle fa-lg" aria-hidden="true"></i></a>
       <a class="nav-item nav-link" href="#"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i></a>
     </div>
 
   
 </nav>
-  <div id="overlay" onclick="questionOff()"></div>
+
+  <div id="overlay" onclick=removeOverlay()></div>
+
   <div id="question">
     <p>Ask a question</p>
     <input type="text" id="title-container" placeholder="Title" />
@@ -76,8 +78,27 @@
           <li class="pb-2">Spanish 3</li>
           <li class="pb-2">Calculus 6</li>
         </ul>
+        <div onclick="addOverlay('new-class')" class="pl-3"><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
       </div>
-      <div id="post-overlay" onclick="postOverlayOff()"></div>
+
+      <div id="new-class">
+        <form>
+          <p>Add class</p>
+          <div class="form-group">
+            <label for="course-title">Course Title</label>
+            <input type="text" id="course-title" placeholder="Course title"/>
+          </div>
+          <div class="form-group">
+            <label for="course-num">Course Number</label>
+            <input type="text" id="course-num" placeholder="Course number"/>
+          </div>
+          <div class="postDiv" styles="text-center">
+            <a href="#" id="post">POST </a>
+          </div>
+        </form>
+      </div>
+
+      <div id="post-overlay" onclick=removeOverlay()></div>
 
       <div class="card" id="post-expanded">
         <div class="card-header">
@@ -132,11 +153,11 @@
             <div class="answered-content content" >
               <!-- ANSWERED CONTENT FOR SEGMENT CONTROL -->
               <div
-                onclick="postOverlayOn()"
+                onclick="addOverlay('post-expanded')"
                 class="card card-hover-effect"
                 style="
-              margin-top: 2rem;
-              margin-bottom: 2rem;
+                margin-top: 2rem;
+                margin-bottom: 2rem;
               "
               >
                 <div class="card-body">
@@ -197,7 +218,7 @@
             <label class="segment-control-label" for="option-2">unanswered</label>
             <div class="unanswered-content content"  >
               <!-- UNANSWERED CONTENT FOR SEGMENT CONTROL -->
-              <div onclick="postOverlayOn()" class="card card-hover-effect" style="
+              <div onclick="addOverlay('post-expanded')" class="card card-hover-effect" style="
                 margin-top: 2rem;
                 margin-bottom: 2rem;
               ">
