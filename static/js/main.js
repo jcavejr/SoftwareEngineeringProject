@@ -1,13 +1,15 @@
-var searchItems = [
-  "Physics",
-  "Computer networks",
-  "Operating systems",
-  "Spanish",
-  "Calculus",
-  "Databases",
-  "Music",
-  "Art"
-];
+//var searchItems = [
+//  "Physics",
+//  "Computer networks",
+//  "Operating systems",
+//  "Spanish",
+//  "Calculus",
+//  "Databases",
+//  "Music",
+//  "Art"
+//];
+
+var searchItems = list_of_classes
 
 var added = [];
 
@@ -19,6 +21,10 @@ function wait() {
   }, 500);
 }
 
+function getAdded(){
+    return added
+    }
+
 function search() {
   var input,
     count = 0;
@@ -28,7 +34,7 @@ function search() {
   while (node.firstChild) {
     node.removeChild(node.firstChild);
   }
-
+  
   for (var i = 0; i < searchItems.length; i++) {
     if (
       searchItems[i].toLowerCase().includes(input) &&
@@ -100,21 +106,21 @@ function removeItem(id) {
 }
 
 function questionOn() {
-  document.getElementById("overlay").style.display = "block";
-  document.getElementById("question").style.display = "block";
-}
+    document.getElementById("overlay").style.display = "block";
+    document.getElementById("question").style.display = "block";
+    }
 
 function questionOff() {
-  document.getElementById("overlay").style.display = "none";
-  document.getElementById("question").style.display = "none";
-}
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("question").style.display = "none";
+    }
 
 function postOverlayOn() {
-  document.getElementById("post-overlay").style.display = "block";
-  document.getElementById("post-expanded").style.display = "block";
-}
+    document.getElementById("post-overlay").style.display = "block";
+    document.getElementById("post-expanded").style.display = "block";
+    }
 
 function postOverlayOff() {
-  document.getElementById("post-overlay").style.display = "none";
-  document.getElementById("post-expanded").style.display = "none";
-}
+    document.getElementById("post-overlay").style.display = "none";
+    document.getElementById("post-expanded").style.display = "none";
+    }
