@@ -72,13 +72,19 @@
         </div>
 
         <div class="login-form">
+            {% from "_formhelpers.html" import render_field %}
             <form action="/login/" method="post">
                 <p class="red" style="margin-bottom: 30px;">Welcome back!</p>
-                <input type="text" class="input" placeholder="Email" name="email"><br>
-                <input type="password" class="input" placeholder="Password" name="password"><br>
+                <d1>
+                {{form.email(class_="input", placeholder = "Email")}}
+                {{form.password(class_="input", placeholder="Password")}}
+                </d1>
                 <input class="btn btn-default" type="submit" value="SIGN IN">
                 <!-- <div class="btn">SIGN IN</div> -->
             </form>
+            {% if error%}
+                <p class="error"><strong>Error:</strong>{{error}}</p>
+            {% endif %}
         </div>
     </div>
 </body>
