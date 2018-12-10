@@ -372,3 +372,58 @@ body {
 .bg-dark {
   background-color: black !important;
 }
+
+  /* 
+  --------------------------
+    for segment controls 
+  --------------------------
+  */
+.segment-control {
+  display: table;
+  width: 50%;
+  margin-left: 46%;
+  padding: 0;
+  }
+
+  .segment-control-item {
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  .segment-control-input {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  .segment-control-label {
+    display: block;
+    margin: 0 -1px -1px 0; 
+    border: 1px solid black;
+    color: black;
+    font: 14px/1.5 sans-serif; 
+    text-align: center;  
+    cursor: pointer;
+  }
+
+  .segment-control-label:hover {
+    background: black;
+    color: #fff;
+  }
+
+  .segment-control-input:checked + .segment-control-label {
+    background: black;
+    color: #fff; 
+  }
+
+.content {
+  display: none;
+  position: absolute;
+  width: 90%;
+  top: 5em;
+  left: 5%;
+}
+.segment-control-input:checked ~ .content {
+    display: block;
+}
