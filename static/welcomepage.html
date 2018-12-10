@@ -16,7 +16,7 @@
     <title>Home Page</title>
   </head>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-between" style="padding: 0;">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-between fixed-top" style="padding: 0; z-index: 300;">
   <img src="../static/img/rutgers-logo.png" id="logo" class="navbar-brand" style="width: 175px;height:75px;" href="#" alt="rutgers-logo">
 
   <div class="">
@@ -144,15 +144,49 @@
         
       </div>
 
-      <div class="col-8">
-        <h1 class="text-center pb-3" style="margin-left: 10rem;">Good Morning, {{ name }}!</h1>
+      <div class="col-8" style="
+      margin-top: 100px;
+      margin-left: auto;
+      margin-right: auto;
+  ">
+        <h1 class="text-center pb-3" >Good Morning, {{ name }}!</h1>
         <ul class="segment-control">
           <li class="segment-control-item">
             <input class="segment-control-input" type="radio" value="1" name="option" id="option-1" checked>
             <label class="segment-control-label" for="option-1">answered</label>
-            <div class="answered-content content" style="
-            margin-left: 2.25rem;" >
+            <div class="answered-content content"  >
               <!-- ANSWERED CONTENT FOR SEGMENT CONTROL -->
+              <div
+                onclick="addOverlay('post-expanded')"
+                class="card card-hover-effect"
+                style="
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+              "
+              >
+                <div class="card-body" style=" 
+                box-shadow: 2.5px 2.5px 2.5px 2.5px rgb(187, 185, 185)">
+                  <div class="card-title d-flex justify-content-between">
+                    <div class="user">John asks</div>
+                    <div class="title">What is a semaphore?</div>
+                    <div class="likes">
+                      12 <i class="fa fa-thumbs-o-up" style="font-size:20px"></i>
+                    </div>
+                  </div>
+                  <p class="card-text">
+                    Question details. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.
+                  </p>
+                  <div class="text-right">
+                    <a href="#" class="card-link">2 answers</a>
+                    <a href="#" class="card-link">Save</a>
+                  </div>
+                </div>
+              </div>
+              
               <div
                 onclick="addOverlay('post-expanded')"
                 class="card card-hover-effect"

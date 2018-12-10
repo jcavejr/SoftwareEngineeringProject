@@ -406,7 +406,7 @@ body {
   */
 .segment-control {
   display: table;
-  width: 50%;
+  width: 46.5%;
   margin-left: 50%;
   padding: 0;
 }
@@ -467,7 +467,8 @@ body {
   right: 0;
   width: 205px;
   border-left: 1px solid rgb(193, 197, 199);
-  padding: 10px;
+  padding: 75px 10px 10px 10px;
+  top: 0;
 }
 
 /* 
@@ -477,9 +478,15 @@ body {
   */
 
 #left-bar {
+  position: fixed;
+  height: 100%;
   border-right: 1px solid rgb(193, 197, 199);
+  padding-top: 75px;
   padding-bottom: 100%;
   margin-bottom: -100%;
   overflow: hidden;
+  overflow-x: hidden;
+  z-index: 100;
+  top: 0;
   background-color: #f8fafb;
 }
