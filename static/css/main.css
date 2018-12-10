@@ -13,6 +13,10 @@
   -----------------------------------
 */
 
+i {
+  color: #cc0033;
+}
+
 a {
   text-decoration: none;
 }
@@ -243,6 +247,7 @@ body {
   margin: 0 auto;
   z-index: 3;
   width: 65rem;
+  margin-top: 100px;
 }
 
 #question {
@@ -486,7 +491,7 @@ body {
   margin-bottom: -100%;
   overflow: hidden;
   overflow-x: hidden;
-  z-index: 100;
+  z-index: 1;
   top: 0;
   background-color: #f8fafb;
 }
