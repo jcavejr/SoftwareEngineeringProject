@@ -71,7 +71,7 @@
 
   <div class="container-fluid">
     <div class="row">
-      <div  style="border-right: 1px solid rgb(193, 197, 199); padding-bottom: 100%; margin-bottom: -100%; overflow: hidden;">
+      <div  id="left-bar">
         <ul style="list-style-type: none; font: Sansation-bold;" class="text-nowrap">
           <li class="pb-2 bottom-border" style="padding: .50rem .75rem 1rem 1rem">Operating Systems</li>
           <li class="pb-2 bottom-border" style="padding: .50rem .75rem 1rem 1rem">Computer Networks</li>
@@ -145,12 +145,13 @@
       </div>
 
       <div class="col-8">
-        <h1 class="text-center pb-3">Good Morning, {{ name }}!</h1>
+        <h1 class="text-center pb-3" style="margin-left: 10rem;">Good Morning, {{ name }}!</h1>
         <ul class="segment-control">
           <li class="segment-control-item">
             <input class="segment-control-input" type="radio" value="1" name="option" id="option-1" checked>
             <label class="segment-control-label" for="option-1">answered</label>
-            <div class="answered-content content" >
+            <div class="answered-content content" style="
+            margin-left: 2.25rem;" >
               <!-- ANSWERED CONTENT FOR SEGMENT CONTROL -->
               <div
                 onclick="addOverlay('post-expanded')"
@@ -285,10 +286,10 @@
         </ul>
       </div>
 
-      <div class="col-2" style="border-left: 1px solid rgb(193, 197, 199); padding-bottom: 100%; margin-bottom: -100%; overflow: hidden;">
+      <div class="column col-xs-3" id="sidebar">
         <div class="col">
           <div class="row">
-            <h3>Online</h3>
+            <h4>Online</h4>
             <div class="col">
               <ul style="list-style-type: none;" class="text-nowrap">
                 <li class="pb-2">John Carter</li>
@@ -301,7 +302,7 @@
         </div>
         <div class="col">
           <div class="row">
-            <h3>Class Chats</h3>
+            <h4>Class Chats</h4>
             <div class="col">
               <ul style="list-style-type: none;">
                 <li class="pt-2">Operating Systems</li>
