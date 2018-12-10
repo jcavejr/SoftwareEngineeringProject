@@ -82,7 +82,7 @@
         </div>
         <div class="card-body" style="padding-bottom: 0;">
           <h5 class="card-title d-flex justify-content-between">
-            <div class="user ">John asks</div>
+            <div class="user ">John asks...</div>
             <div class="title ">What is a semaphore?</div>
             <div class="likes ">
               12 <i class="fa fa-thumbs-o-up" style="font-size:20px"></i>
@@ -122,64 +122,141 @@
 
       <div class="col-8">
         <h1 class="text-center pb-3">Good Morning, {{ name }}!</h1>
-        <div
-          onclick="postOverlayOn()"
-          class="card card-hover-effect"
-          style="
-        margin-bottom: 2rem;
-        "
-        >
-          <div class="card-body">
-            <div class="card-title d-flex justify-content-between">
-              <div class="user ">John asks</div>
-              <div class="title ">What is a semaphore?</div>
-              <div class="likes ">
-                12 <i class="fa fa-thumbs-o-up" style="font-size:20px"></i>
+        <ul class="segment-control">
+          <li class="segment-control-item">
+            <input class="segment-control-input" type="radio" value="1" name="option" id="option-1" checked>
+            <label class="segment-control-label" for="option-1">answered</label>
+            <div class="answered-content content" >
+              <!-- ANSWERED CONTENT FOR SEGMENT CONTROL -->
+              <div
+                onclick="postOverlayOn()"
+                class="card card-hover-effect"
+                style="
+              margin-top: 2rem;
+              margin-bottom: 2rem;
+              "
+              >
+                <div class="card-body">
+                  <div class="card-title d-flex justify-content-between">
+                    <div class="user">John asks</div>
+                    <div class="title">What is a semaphore?</div>
+                    <div class="likes">
+                      12 <i class="fa fa-thumbs-o-up" style="font-size:20px"></i>
+                    </div>
+                  </div>
+                  <p class="card-text">
+                    Question details. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.
+                  </p>
+                  <div class="text-right">
+                    <a href="#" class="card-link">2 answers</a>
+                    <a href="#" class="card-link">Save</a>
+                  </div>
+                </div>
               </div>
-            </div>
-            <p class="card-text">
-              Question details. Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat.
-            </p>
-            <div class="text-right">
-              <a href="#" class="card-link">2 answers</a>
-              <a href="#" class="card-link">Save</a>
-            </div>
-          </div>
-        </div>
 
-        <div
-          class="card"
-          style="
-        margin-bottom: 2rem;
-       "
-        >
-          <div class="card-body">
-            <div class="card-title text-left" style="display: block">
-              LongNameTest says...
-              <span class="text-right" style="margin-left: 60%">2 L</span>
-              <h5 class="text-center">When should I use a semaphore?</h5>
+              <div
+                class="card"
+                style="
+              margin-bottom: 2rem;
+              "
+              >
+                <div class="card-body">
+                  <div class="card-title d-flex justify-content-between">
+                    <div class="user">Jeff asks...</div>
+                    <div class="title">When should I use a semaphore?</div>
+                    <div class="likes">
+                      2 <i class="fa fa-thumbs-o-up" style="font-size:20px"></i>
+                    </div>
+                  </div>
+                  <p class="card-text">
+                    Question details. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate
+                    velit esse cillum dolore eu fugiat nulla pariatur.
+                  </p>
+                  <div class="text-right">
+                    <a href="#" class="card-link">5 answers</a>
+                    <a href="#" class="card-link">Save</a>
+                  </div>
+                </div>
+              </div>
+              <!-- END ANSWERED QUESTIONS -->
             </div>
-            <!--
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            -->
-            <p class="card-text">
-              Question details. Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
-            <div class="text-right">
-              <a href="#" class="card-link">5 answers</a>
-              <a href="#" class="card-link">Save</a>
+          </li>
+          <li class="segment-control-item">
+            <input class="segment-control-input" type="radio" value="2" name="option" id="option-2">
+            <label class="segment-control-label" for="option-2">unanswered</label>
+            <div class="unanswered-content content"  >
+              <!-- UNANSWERED CONTENT FOR SEGMENT CONTROL -->
+              <div onclick="postOverlayOn()" class="card card-hover-effect" style="
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+              ">
+                <div class="card-body">
+                  <div class="card-title d-flex justify-content-between">
+                    <div class="user ">Meredith asks...</div>
+                    <div class="title ">What is normal force?</div>
+                    <div class="likes">
+                      0 <i class="fa fa-thumbs-o-up" style="font-size:20px"></i>
+                    </div>
+                  </div>
+                  <p class="card-text">
+                    Question details. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.
+                  </p>
+                  <div class="text-right">
+                    <a href="#" class="card-link">0 answers</a>
+                    <a href="#" class="card-link">Save</a>
+                  </div>
+                </div>
+              </div>
+              <!-- END UNANSWERED CONTENT -->
             </div>
-          </div>
-        </div>
+          </li>
+          <li class="segment-control-item">
+            <input class="segment-control-input" type="radio" value="3" name="option" id="option-3">
+            <label class="segment-control-label" for="option-3">me</label>
+            <div class="my-content content">
+              <!-- MY CONTENT FOR SEGMENT CONTROL -->
+              <div class="card" style="
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+                ">
+                <div class="card-body">
+                  <div class="card-title d-flex justify-content-between">
+                    <div class="user">Eddy asks...</div>
+                    <div class="title">What is the derivative of e^x?</div>
+                    <div class="likes">
+                      3 <i class="fa fa-thumbs-o-up" style="font-size:20px"></i>
+                    </div>
+                  </div>
+                  <p class="card-text">
+                    Question details. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate
+                    velit esse cillum dolore eu fugiat nulla pariatur.
+                  </p>
+                  <div class="text-right">
+                    <a href="#" class="card-link">6 answers</a>
+                    <a href="#" class="card-link">Save</a>
+                  </div>
+                </div>
+              </div>
+              <!-- END MY CONTENT -->
+            </div>
+          </li>
+        </ul>
       </div>
 
       <div class="col-2 pt-2">
