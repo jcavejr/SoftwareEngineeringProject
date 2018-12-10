@@ -10,7 +10,10 @@
     />
     <!-- Loads bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"> -->
     <!-- Loads CSS for welcome from static folder -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script> -->
     <link rel="stylesheet" href="css/main.css" />
     <script src="js/main.js"></script>
     <title>Home Page</title>
@@ -18,6 +21,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-between fixed-top" style="padding: 0; z-index: 300;">
   <img src="../static/img/rutgers-logo.png" id="logo" class="navbar-brand" style="width: 175px;height:75px;" href="#" alt="rutgers-logo">
+  <!-- <img src="{{ url_for('static', filename='img/rutgers-logo.png') }}" id="logo" class="navbar-brand" style="width: 175px;height:75px;" href="#" alt="rutgers-logo"> -->
 
   <div class="">
     <form class="form-inline col-4">
@@ -41,34 +45,30 @@
 </nav>
 
   <div id="overlay" onclick=removeOverlay()></div>
-
+<!--
   <div id="question">
-    <p>Ask a question</p>
-    <input type="text" id="title-container" placeholder="Title" />
-    <textarea rows="12" cols="50" style="resize: none;"></textarea>
-    <div class="postDiv">
-      <a href="#" id="post">POST </a>
-    </div>
-    <div class="dropdown">
-      <a id="tab" href="#">Class &#9661</a>
-      <ul class="drop-nav">
-        <li><a href="#">Computer</a></li>
-        <li><a href="#">Intro to Art History</a></li>
-        <li><a href="#">Physics</a></li>
-      </ul>
-      </li>
-    </div>
-    <div class="dropdown">
-      <a id="tab" href="#">Subject &#9661</a>
-      <ul class="drop-nav">
-        <li><a href="#">Physics</a></li>
-        <li><a href="#">Comp Geometry</a></li>
-        <li><a href="#">Physics</a></li>
-      </ul>
-      </li>
-    </div>
+  {% from "_formhelpers.html" import render_field %}
+    <form method=post action="/welcome_page/">
+        <p>Ask a question</p>
+        <dl>
+            {{form.title(class_="input", placeholder = "Title", id = "title-container")}}
+            {{form.post(placeholder = "Ask your question here", rows = "12", cols = "50", style = "resize: none")}}
+            {{form.class_name}}
+        </dl>
+        <input class="btn btn-default" type=submit value="SUBMIT">
+    </form>
   </div>
-
+-->
+    <div id="question">
+        <form method=post actio="/welcome_page/">
+            <dl>
+                <input class="input" id="title-container" name="title" placeholder="Title" type="text" value="">
+                <textarea cols="50" id="post" name="post" placeholder="Ask your question here" rows="12" style="resize: none"></textarea>
+                <select id="class_name" name="class_name"><option value="C">C</option><option value="Computer Networks">Computer Networks</option><option value="Software Engineerining">Software Engineering</option></select>
+            </dl>
+            <input class="btn btn-default" type=submit value="SUBMIT">
+        </form>
+    </div>
   <div class="container-fluid">
     <div class="row">
       <div  id="left-bar">
