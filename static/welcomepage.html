@@ -16,25 +16,28 @@
     <title>Home Page</title>
   </head>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <img src="../static/img/rutgers-logo.png" id="logo" class="navbar-brand flex-grow-1" href="#" alt="rutgers-logo">
-  <div class="flex-grow-1 d-flex">
-    <form class="form-inline bg-dark mx-0 mx-lg-auto">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-between" style="padding: 0;">
+  <img src="../static/img/rutgers-logo.png" id="logo" class="navbar-brand" style="width: 175px;height:75px;" href="#" alt="rutgers-logo">
+
+  <div class="">
+    <form class="form-inline col-4">
+      <input class="form-control " type="search" placeholder="Search" aria-label="Search">
     </form>
   </div>
+  <!--
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse">
+-->
+  <div class="">
     <div class="navbar-nav ml-auto">
       <a class="nav-item nav-link" href="#"><i class="fa fa-home fa-lg" aria-hidden="true"></i></a>
       <a class="nav-item nav-link" onclick="questionOn()"><i class="fa fa-question-circle fa-lg" aria-hidden="true"></i></a>
-      
       <a class="nav-item nav-link" href="#"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i></a>
     </div>
-  </div>
+
+  
 </nav>
   <div id="overlay" onclick="questionOff()"></div>
   <div id="question">
