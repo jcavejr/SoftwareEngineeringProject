@@ -359,6 +359,11 @@ body {
   border: 1px solid #cc0033;
 }
 
+.bottom-border {
+  border-bottom: 1px solid #cc0033;
+  width: auto;
+}
+
 /* new class overlay */
 
 #new-class {
@@ -380,7 +385,6 @@ body {
   width: 500px;
 }
 
-
 /*
   --------------------------
   home page
@@ -395,7 +399,7 @@ body {
   background-color: black !important;
 }
 
-  /* 
+/* 
   --------------------------
     for segment controls 
   --------------------------
@@ -405,39 +409,39 @@ body {
   width: 50%;
   margin-left: 46%;
   padding: 0;
-  }
+}
 
-  .segment-control-item {
-    display: table-cell;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-  }
+.segment-control-item {
+  display: table-cell;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
 
-  .segment-control-input {
-    position: absolute;
-    visibility: hidden;
-  }
+.segment-control-input {
+  position: absolute;
+  visibility: hidden;
+}
 
-  .segment-control-label {
-    display: block;
-    margin: 0 -1px -1px 0; 
-    border: 1px solid black;
-    color: black;
-    font: 14px/1.5 sans-serif; 
-    text-align: center;  
-    cursor: pointer;
-  }
+.segment-control-label {
+  display: block;
+  margin: 0 -1px -1px 0;
+  border: 1px solid black;
+  color: black;
+  font: 14px/1.5 sans-serif;
+  text-align: center;
+  cursor: pointer;
+}
 
-  .segment-control-label:hover {
-    background: black;
-    color: #fff;
-  }
+.segment-control-label:hover {
+  background: black;
+  color: #fff;
+}
 
-  .segment-control-input:checked + .segment-control-label {
-    background: black;
-    color: #fff; 
-  }
+.segment-control-input:checked + .segment-control-label {
+  background: black;
+  color: #fff;
+}
 
 .content {
   display: none;
@@ -447,5 +451,5 @@ body {
   left: 5%;
 }
 .segment-control-input:checked ~ .content {
-    display: block;
+  display: block;
 }
