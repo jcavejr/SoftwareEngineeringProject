@@ -404,8 +404,7 @@
               <ul style="list-style-type: none;" class="text-nowrap">
               {% for m in range(3) %}
                 {% if active_users[m] %}
-                    <i class = "fa fa-circle" style = "color: green"></i>
-                    <li class="pb-2">{{active_users[m]}}</li>
+                    <li class="pb-2"><i class = "fa fa-circle" style = "color: green"></i> {{active_users[m]}}</li>
                 {% endif %}
               {% endfor %}
                 <!--<li class="pb-2">Jeff Cave</li>
