@@ -177,8 +177,9 @@
       </p>
       </div>
       <div class="form-group" style="padding:0 2rem;">
-      <label for="answer">Answer:</label>
-      <textarea class="form-control red-border" id="answer" rows="3" placeholder="Help us answer the question!"></textarea>
+          <form method = post action = "/2/">
+            {{formAnswer.answer(placeholder = "Help us answer the question!", class_ = "form-control red-border", rows = "5", cols = "50", style = "resize: none")}}
+            <button type = "submit" style="margin-top: 8px; padding: 5px;"> Submit </button>
       </div>
       </div>
 
@@ -205,12 +206,9 @@
 
         <div class="form-group" style="padding:0 2rem;">
           <label for="answer">Answer:</label>
-          <textarea
-            class="form-control red-border"
-            id="answer"
-            rows="3"
-            placeholder="Help us answer the question!"
-          ></textarea>
+          <form method = post action = "/3/">
+            {{formAnswer.answer(placeholder = "Help us answer the question!", class_ = "form-control red-border", rows = "5", cols = "50", style = "resize: none")}}
+            <button type = "submit" style="margin-top: 8px; padding: 5px;"> Submit </button>
         </div>
         
       </div>

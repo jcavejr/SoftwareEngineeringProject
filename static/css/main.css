@@ -225,7 +225,7 @@ body {
   bottom: 0;
   background-color: #030303;
   opacity: 0.85;
-  z-index: 9000;
+  z-index: 3;
 }
 #post-overlay {
   position: fixed;
