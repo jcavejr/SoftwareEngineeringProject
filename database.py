@@ -4,6 +4,8 @@ Created on Tue Oct 23 16:34:27 2018
 
 @author: John Carter and Dominic Scola
 """
+
+from datetime import datetime
 import re
 import mysql.connector
 from mysql.connector import errorcode
@@ -37,13 +39,15 @@ class se_db:
             for (count) in self.cursor:
                 if count[0] > 0:
                     return False
-        except:
+        except errorcode.Error as err:
+            print(err)
             return False
-        queryInsert = """INSERT INTO test.profiles (email, password, first, last, school, upvotes, active_flag) VALUES ('%s','%s','%s','%s','%s', 0, 1)""" % (email, password, first, last, school)
+        queryInsert = """INSERT INTO test.profiles (email, password, first, last, school, upvotes) VALUES ('%s','%s','%s','%s','%s', 0)""" % (email, password, first, last, school)
         try:
             self.cursor.execute(queryInsert)
             self.connection.commit()
-        except:
+        except errorcode.Error as err:
+            print(err)
             return False
         return True
     
@@ -105,7 +109,48 @@ class se_db:
             return False
         for (upvotes) in self.cursor:
             return upvotes[0]
+   
+    def getProfileClasses(self, email):
+        querySelect = """SELECT list_of_classes FROM test.profiles WHERE email = '%s'""" % (email)
+        try:
+            self.cursor.execute(querySelect)
+        except:
+            return False
+        class_list = []
+        for(classes) in self.cursor:
+            length = len(classes)
+            for i in range(length):
+                class_list.append(classes[i])
+        return class_list
     
+    def addDateTime(self, email):
+        '''
+        Adds the current date and time to a profile
+        @param: email of profile to edit
+        @return: the time added to the profile
+        '''
+        now = datetime.now()
+        formatted_date = now.strftime('%Y-%m-%d %H:%M:%S')
+        self.cursor.execute("""UPDATE test.profiles SET active_flag = %s WHERE email = %s""",(formatted_date, email))
+        self.connection.commit()
+        return formatted_date
+
+    def getActiveUsers(self):
+        '''
+        Gets all active users
+        @return: all active users
+        '''
+        query = """SELECT first FROM test.profiles WHERE active_flag >= NOW() - INTERVAL 10 MINUTE""" 
+        try:
+            self.cursor.execute(query)
+        except:
+            return False
+        activeUsers = []
+        for (name) in self.cursor:
+            names = len(name)
+            for (i) in range(names):
+                activeUsers.append(name[i])
+        return activeUsers
 
     '''
     Message Functions
@@ -152,7 +197,8 @@ class se_db:
             try:
                 self.cursor.execute(queryInsertNewMessage)
                 self.connection.commit()
-            except:
+            except Exception as e:
+                print(e)
                 return False
             return True
 
@@ -229,6 +275,71 @@ class se_db:
             finally:
                 return True
 
+    def getThreadTitlesByTime(self):
+        query = """SELECT title from test.message WHERE (FLOOR(message_id) - message_id = 0) ORDER BY date_time DESC"""
+        try:
+            self.cursor.execute(query)
+        except:
+            return False
+        title_list = []
+        for (titles) in self.cursor:
+            length = len(titles)
+            for i in range(length):
+                title_list.append(titles[i])
+        return title_list
+
+    def getThreadClassByTime(self):
+        query = """SELECT class from test.message WHERE (FLOOR(message_id) - message_id = 0) OR    DER BY date_time DESC"""
+        try:
+            self.cursor.execute(query)
+        except:
+            return False
+        class_list = []
+        for (classes) in self.cursor:
+            length = len(classes)
+            for i in range(length):
+                class_list.append(classes[i])
+        return class_list
+
+    def getThreadCreatorByTime(self):
+        query = """SELECT profiles.first from test.profiles profiles inner join test.message message on profiles.email = test.message.creator WHERE (FLOOR(message_id) - message_id = 0) ORDER BY date_time DESC"""
+        try:
+            self.cursor.execute(query)
+        except Exception as e:
+            print(e)
+            return False
+        creator_list = []
+        for(creators) in self.cursor:
+            length = len(creators)
+            for i in range(length):
+                creator_list.append(creators[i])
+        return creator_list
+    
+    def getThreadMessageByTime(self):
+        query = """SELECT post from test.message WHERE (FLOOR(message_id) - message_id = 0) ORDER BY date_time DESC"""
+        try:
+            self.cursor.execute(query)
+        except:
+            return False
+        post_list = []
+        for(post) in self.cursor:
+            length = len(post)
+            for i in range(length):
+                post_list.append(post[i])
+        return post_list
+
+    def getThreadNumbersByTime(self):
+        query = """SELECT message_id from test.message WHERE (FLOOR(message_id) - message_id = 0) ORDER BY date_time DESC"""
+        try:
+            self.cursor.execute(query)
+        except:
+            return False
+        message_id_list = []
+        for (message_id) in self.cursor:
+            length = len(message_id)
+            for i in range(length):
+                message_id_list.append(str(message_id[i]))
+        return message_id_list
 
     '''
     Class Functions
