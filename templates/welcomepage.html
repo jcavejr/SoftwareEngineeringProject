@@ -42,7 +42,7 @@
     <title>Home Page</title>
   </head>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-between fixed-top" style="padding: 0; z-index: 300;">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-between fixed-top" style="padding: 0; z-index: 2;">
 <!--   <img src="../static/img/rutgers-logo.png" id="logo" class="navbar-brand" style="width: 175px;height:75px;" href="#" alt="rutgers-logo"> -->
   <img src="{{ url_for('static', filename='img/rutgers-logo.png') }}" id="logo" class="navbar-brand" style="width: 175px;height:75px;" href="#" alt="rutgers-logo">
 
@@ -73,11 +73,13 @@
     <form method=post action="/create_new_post/">
         <p>Ask a question</p>
         <dl>
-            {{form.title(class_="input", placeholder = "Title", id = "title-container")}}
+            {{form.title(class_="input", placeholder = "Title", id = "title-container", style = "margin-bottom: 0px;")}}
             {{form.post(placeholder = "Ask your question here", rows = "12", cols = "50", style = "resize: none")}}
             {{form.class_name}}
         </dl>
-        <input class="btn btn-default" type=submit value="SUBMIT">
+        <div class="postDiv">
+            <a href="#" type="submit" id="post">POST </a>
+          </div>
     </form>
   </div>
 

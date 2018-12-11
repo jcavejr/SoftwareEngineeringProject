@@ -225,7 +225,7 @@ body {
   bottom: 0;
   background-color: #030303;
   opacity: 0.85;
-  z-index: 2;
+  z-index: 9000;
 }
 #post-overlay {
   position: fixed;
@@ -251,25 +251,25 @@ body {
 }
 
 #post-expanded1 {
-    display: none;
-    position: fixed;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    z-index: 3;
-    width: 65rem;
-    margin-top: 100px;
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 3;
+  width: 65rem;
+  margin-top: 100px;
 }
 
 #post-expanded2 {
-    display: none;
-    position: fixed;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    z-index: 3;
-    width: 65rem;
-    margin-top: 100px;
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 3;
+  width: 65rem;
+  margin-top: 100px;
 }
 
 #question {
@@ -279,7 +279,7 @@ body {
   position: fixed;
   left: 50%;
   display: none;
-  z-index: 3;
+  z-index: 9000;
 }
 
 #question p {
