@@ -41,6 +41,8 @@ class AskQuestionForm(Form):
 class AnswerQuestionForm(Form):
     answer = TextAreaField('Help us answer this question!')
 
+
+
 @app.route('/')
 def homepage():
     return redirect(url_for("loginpage"))
@@ -191,13 +193,18 @@ def reply1():
     user_db = se_db()
     title_list = user_db.getThreadTitlesByTime()
     thread_nums = user_db.getThreadNumbersByTime()
+    replies1 = user_db.getRepliesToThread(int(float(thread_nums[0])))
+    user_db.closeConnection()
     try:
         form = AnswerQuestionForm(request.form)
         if request.method == "POST":
-            user_db1 = se_db()
             answer = form.answer.data
             try:
-                user_db1.addMessage(1, thread_nums[0], session["email"], title, answer, "C")
+                user_db1 = se_db()
+                try:
+                    user_db1.addMessage(1, (float(thread_nums[0])+len(replies1)/1000), session["email"], title_list[0], answer, "C")
+                except Exception as e:
+                    print(e)
                 user_db1.closeConnection()
             except:
                 flash("Error: Information could not be properly inserted into database");
@@ -207,6 +214,61 @@ def reply1():
     except Exception as e:
         print("Error displaying form")
         return (str(e))
+
+@app.route('/2/', methods=["GET", "POST"])
+def reply2():
+    user_db = se_db()
+    title_list = user_db.getThreadTitlesByTime()
+    thread_nums = user_db.getThreadNumbersByTime()
+    replies2 = user_db.getRepliesToThread(int(float(thread_nums[1])))
+    user_db.closeConnection()
+    try:
+        form = AnswerQuestionForm(request.form)
+        if request.method == "POST":
+            answer = form.answer.data
+            try:
+                user_db1 = se_db()
+                try:
+                    user_db1.addMessage(1, (float(thread_nums[1])+len(replies2)/1000), session["email"], title_list[1], answer, "C")
+                except Exception as e:
+                    print(e)
+                user_db1.closeConnection()
+            except:
+                flash("Error: Information could not be properly inserted into database");
+                gc.collect();
+            return redirect(url_for("welcome_page"))
+        return render_template("welcomepage.html", form = form)
+    except Exception as e:
+         print("Error displaying form")
+         return (str(e))
+
+@app.route('/3/', methods=["GET", "POST"])
+def reply3():
+    user_db = se_db()
+    title_list = user_db.getThreadTitlesByTime()
+    thread_nums = user_db.getThreadNumbersByTime()
+    replies3 = user_db.getRepliesToThread(int(float(thread_nums[2])))
+    user_db.closeConnection()
+    try:
+        form = AnswerQuestionForm(request.form)
+        if request.method == "POST":
+            answer = form.answer.data
+            try:
+                user_db1 = se_db()
+                try:
+                    user_db1.addMessage(1, (float(thread_nums[2])+len(replies3)/1000), session["email"], title_list[2], answer, "C")
+                except Exception as e:
+                    print(e)
+                user_db1.closeConnection()
+            except:
+                flash("Error: Information could not be properly inserted into database");
+                gc.collect();
+            return redirect(url_for("welcome_page"))
+        return render_template("welcomepage.html", form = form)
+    except Exception as e:
+        print("Error displaying form")
+        return (str(e))
+
 
 if __name__ == "__main__":
     app.run()
