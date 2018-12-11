@@ -111,7 +111,7 @@ def welcome_page():
     title_list = ['Testing Testing 123', 'Test2', 'Test']
     creator_list = ['test1@test.com', 'test@test.com', 'test@test.com']
     post_list = ['This is a test of the post system.', 'Hello!', 'This is a test post']
-    active_users = []
+    active_users = ["Jeff Cave"]
     thread_nums = ['2.000', '1.000', '0.000']
     name = "Test User"
     classes = ["C", "Software Engineering"]

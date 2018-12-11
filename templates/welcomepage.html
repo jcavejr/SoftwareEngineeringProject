@@ -403,7 +403,10 @@
             <div class="col">
               <ul style="list-style-type: none;" class="text-nowrap">
               {% for m in range(3) %}
-                <li class="pb-2"></i>{{active_users[m]}}</li>
+                {% if active_users[m] %}
+                    <i class = "fa fa-circle" style = "color: green"></i>
+                    <li class="pb-2">{{active_users[m]}}</li>
+                {% endif %}
               {% endfor %}
                 <!--<li class="pb-2">Jeff Cave</li>
                 <li class="pb-2">Dom Scola</li>
