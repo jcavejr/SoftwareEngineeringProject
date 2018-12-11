@@ -250,6 +250,28 @@ body {
   margin-top: 100px;
 }
 
+#post-expanded1 {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 3;
+    width: 65rem;
+    margin-top: 100px;
+}
+
+#post-expanded2 {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 3;
+    width: 65rem;
+    margin-top: 100px;
+}
+
 #question {
   transform: translate(-50%, -50%);
   top: 40%;
